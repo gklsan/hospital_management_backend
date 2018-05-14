@@ -34,6 +34,7 @@ module HospitalManagement
       puts "Cros origin url: #{ENV["CROSS_ORIGIN"]}"
       allow do
         origins "#{ENV["CROSS_ORIGIN"]}"
+        # origins 'http://hospital-management.gklsan.in'
         resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
       end
     end
