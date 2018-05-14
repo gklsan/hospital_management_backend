@@ -31,9 +31,9 @@ module HospitalManagement
     config.api_only = true
 
     config.middleware.insert_before 0, Rack::Cors do
+      puts "Cros origin url: #{ENV["CROSS_ORIGIN"]}"
       allow do
-        #origins 'http://localhost:5000'
-        origins 'https://boiling-sea-44956.herokuapp.com'
+        origins "#{ENV["CROSS_ORIGIN"]}"
         resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
       end
     end
