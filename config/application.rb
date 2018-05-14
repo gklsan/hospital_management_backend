@@ -33,7 +33,8 @@ module HospitalManagement
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         #origins 'http://localhost:5000'
-        origins 'https://boiling-sea-44956.herokuapp.com'
+#         origins 'https://boiling-sea-44956.herokuapp.com'
+        origins 'http://hospital-management.gklsan.in'
         resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
       end
     end
